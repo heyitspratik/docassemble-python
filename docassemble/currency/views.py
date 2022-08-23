@@ -79,7 +79,10 @@ class successview(View):
         t.setFont('Helvetica-Bold', 10)
         t.setCharSpace(2)
         t.setTextOrigin(30, 800)
-        text = "(1) What is your total income per year?\n" + "-" + str(que_obj[2].value) + "   (2) How much is your house worth?\n" + "-" + str(que_obj[1].value) + "   (3) How much money you are investing per year?\n" + "-" + str(que_obj[0].value)
+        income_value = str(que_obj[2].value) + " " + que_obj[2].currency
+        home_value = str(que_obj[1].value) + " " + que_obj[1].currency
+        invest_value = str(que_obj[0].value) + " " + que_obj[0].currency
+        text = "(1) What is your total income per year?" + "-" + income_value + "   (2) How much is your house worth?" + "-" + home_value +"   (3) How much money you are investing per year?" + "-" + invest_value
         wraped_text = "\n".join(wrap(text, 80)) # 80 is line width
         t.textLines(wraped_text)
 
@@ -88,4 +91,4 @@ class successview(View):
         p.save()
 
         buffer.seek(0)
-        return FileResponse(buffer, as_attachment=True, filename='hello.pdf')
+        return FileResponse(buffer, as_attachment=True, filename='docassemble.pdf')
