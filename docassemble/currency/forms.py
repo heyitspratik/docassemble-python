@@ -5,4 +5,4 @@ from .models import QuestionData
 class QuestionForm(forms.ModelForm):
     class Meta():
         model = QuestionData
-        fields = ('question','currency','value')
+        fields = ('currency','value')
