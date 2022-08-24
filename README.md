@@ -7,7 +7,7 @@ Docassemble using Django Framework
 ```
 python3 -m venv venv
 ```
-## required installments
+## required installations
 install all the python packages mentioned in requirements.txt file
 
 ## create django project and make an app inside it
